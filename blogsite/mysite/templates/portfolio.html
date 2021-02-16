@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %} PORTFOLIO
+{% endblock title %}
+
+{% block content %}
+<h1 class='text-center'>PROJECTS</h1>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+<div class="container">
+  <!-- project file -->
+  <div class="row">
+    {% if projects %}
+    {% for project in projects %}
+    <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-30">
+    <div class="card my-0" style="width: 18rem;">
+
+
+      <img
+        src="{{project.image.url}}"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{project.title}}</h5>
+        <p class="card-text">{{project.desc}}
+        </p>
+        <a href="{{project.zip_file}}"
+          class="btn btn-primary">Zip File</a>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  <!-- Project ends -->
+</div>
+
+
+
+</div>
+
+{% endblock content %}
